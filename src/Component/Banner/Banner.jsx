@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bannerImg from "../../assets/images/Banner/banner.gif";
 
 const Banner = () => {
@@ -15,9 +16,11 @@ const Banner = () => {
             productivity with intuitive design, deadlines, and progress
             tracking. Essential for effective project and time management.
           </p>
-          <button className="btn text-white btn-primary bg-[#a70000] border-none hover:bg-[#ff7b7b]">
-            Let's Explore
-          </button>
+          <Link to={'/login'}>
+            <button className="btn text-white btn-primary bg-[#a70000] border-none hover:bg-[#ff7b7b]">
+              Let's Explore
+            </button>
+          </Link>
         </div>
       </div>
     </div>
