@@ -1,12 +1,10 @@
-import {  FaGithub } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
 
-
 const Login = () => {
-  const { googleLogin, githubLogin,  emailLogin, } =
-    useContext(AuthContext);
+  const { googleLogin, githubLogin, emailLogin } = useContext(AuthContext);
 
   const handlePopUpLogin = (media) => {
     media()
@@ -208,8 +206,6 @@ const Login = () => {
                     </div>
                   </button>
                 </div>
-
-               
               </div>
             </div>
           </div>
