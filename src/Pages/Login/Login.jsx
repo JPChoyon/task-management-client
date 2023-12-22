@@ -1,14 +1,19 @@
 import { FaGithub } from "react-icons/fa6";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { googleLogin, githubLogin, emailLogin } = useContext(AuthContext);
+   const navigate = useNavigate();
 
   const handlePopUpLogin = (media) => {
     media()
-      .then((user) => console.log(user.user))
+      .then(() => {
+        toast.success("Succesfully account created");
+        navigate("/");
+      })
       .catch((err) => console.error(err.message));
   };
 
@@ -22,7 +27,11 @@ const Login = () => {
 
     // log in with email and password
     emailLogin(email, password)
-      .then((user) => console.log(user.user))
+      .then((user) => {
+        console.log(user.user);
+        toast.success("Logged In Success");
+        Navigate("/");
+      })
       .catch((err) => console.log(err));
   };
 

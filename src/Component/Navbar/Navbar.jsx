@@ -19,7 +19,7 @@ const Navbar = () => {
           <a>Contact Us</a>
         </li>
       </NavLink>
-      <NavLink to={"/"}>
+      <NavLink to={"/dashboard"}>
         <li>
           <a>Dashboard</a>
         </li>

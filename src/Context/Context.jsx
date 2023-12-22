@@ -2,12 +2,10 @@ import { createContext, useEffect, useState } from "react";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
-  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   signInWithPopup,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  FacebookAuthProvider,
   signOut,
 } from "firebase/auth";
 import auth from "../../Firebase.config";
@@ -21,62 +19,58 @@ const googleProvider = new GoogleAuthProvider();
 // github provider
 const githubProvider = new GithubAuthProvider();
 
-// twitter provider
-const twitterProvider = new TwitterAuthProvider();
-
-// facebook Provider
-const facebookProvider = new FacebookAuthProvider();
-
 const Context = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   // google log in popup
   const googleLogin = () => {
+     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   // github login popup
   const githubLogin = () => {
+     setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
 
-  // twitter login popup
-  const twitterLogin = () => {
-    return signInWithPopup(auth, twitterProvider);
-  };
-
-  // facebook login popup
-  const facebookLogin = () => {
-    return signInWithPopup(auth, facebookProvider);
-  };
+ 
 
   // email and password sign up
   const emailSignup = (email, password) => {
+     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // sign in with email and password
   const emailLogin = (email, password) => {
+     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // log out user
   const logOut = () => {
+     setLoading(true);
     return signOut(auth);
   };
 
-  // hold user in this useEffect section
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      setUser(user);
-    });
-  }, []);
-
+  
+   useEffect(() => {
+     const unsubscribe = onAuthStateChanged(auth, (user) => {
+       setUser(user);
+       setLoading(false);
+     });
+     return () => {
+       unsubscribe();
+     };
+   }, []);
   const authInfo = {
     googleLogin,
     githubLogin,
     emailLogin,
     emailSignup,
     logOut,
+    loading,
     user,
   };
   return (
