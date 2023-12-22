@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import SectionHeader from "../../SectionHeader/SectionHeader";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import toast from "react-hot-toast";
 
@@ -32,7 +32,7 @@ const Contact = () => {
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
-            <SectionHeader title={"Contact"} subtitle={"Me"}></SectionHeader>
+            
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
               If any quary then Contact us
             </p>

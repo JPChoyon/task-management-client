@@ -14,7 +14,7 @@ const Navbar = () => {
           <a>Membership</a>
         </li>
       </NavLink>
-      <NavLink to={"/"}>
+      <NavLink to={"/contact"}>
         <li>
           <a>Contact Us</a>
         </li>
