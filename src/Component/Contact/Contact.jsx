@@ -34,7 +34,7 @@ const Contact = () => {
           <div className="flex flex-col text-center w-full mb-12">
             <SectionHeader title={"Contact"} subtitle={"Me"}></SectionHeader>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              If any quary then Contact me
+              If any quary then Contact us
             </p>
           </div>
 
@@ -93,7 +93,7 @@ const Contact = () => {
                   <input
                     type="submit"
                     value="Send"
-                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="flex mx-auto text-white bg-red-700 border-0 py-2 px-8 focus:outline-none hover:bg-[#FFBABA] rounded text-lg"
                   ></input>
                 </div>
               </div>

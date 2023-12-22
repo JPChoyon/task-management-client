@@ -4,6 +4,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Resister';
 import Dashboard from '../Layout/Dashboard';
+import Contact from '../Component/Contact/Contact';
 
 const Router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: '/contact',
+        element:<Contact></Contact>
       },
       {
         path: "/login",
