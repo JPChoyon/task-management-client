@@ -41,19 +41,11 @@ const Router = createBrowserRouter([
     children: [
       {
         path: "create-task",
-        element: (
-          
-            <CreateTask></CreateTask>
-          
-        ),
+        element: <CreateTask></CreateTask>,
       },
       {
         path: "todo",
-        element: (
-          
-            <todo></todo>
-          
-        ),
+        element: <todo></todo>,
       },
     ],
   },
