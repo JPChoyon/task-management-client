@@ -1,5 +1,4 @@
 import { FaEdit, FaHome, FaTasks } from "react-icons/fa";
-
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
@@ -33,7 +32,7 @@ const Dashboard = () => {
               <li> Home</li>
             </NavLink>
             <NavLink
-              to={"work-sheet"}
+              to={"create-task"}
               className="uppercase text-2xl py-3 flex items-center gap-2 text-black "
             >
               <FaEdit />

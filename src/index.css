@@ -1,9 +1,9 @@
+/* google inter font  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;800;900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* google inter font  */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;800;900&display=swap');
- body{
-  font-family: 'Inter', sans-serif;
- }

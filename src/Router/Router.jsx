@@ -5,6 +5,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Resister';
 import Dashboard from '../Layout/Dashboard';
 import Contact from '../Component/Contact/Contact';
+import CreateTask from '../Pages/Dashboard/CreateTask';
 
 const Router = createBrowserRouter([
   {
@@ -16,8 +17,8 @@ const Router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: '/contact',
-        element:<Contact></Contact>
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/login",
@@ -25,19 +26,20 @@ const Router = createBrowserRouter([
       },
       {
         path: "/register",
-        element:<Register></Register>
+        element: <Register></Register>,
       },
     ],
   },
   {
-    path: 'dashboard',
+    path: "dashboard",
     element: <Dashboard></Dashboard>,
     children: [
       {
-
-      }
-    ]
-  }
+        path: "create-task",
+        element:<CreateTask></CreateTask>
+      },
+    ],
+  },
 ]);
 
 export default Router;
