@@ -1,7 +1,5 @@
-import { FaHistory, FaHome, FaList, FaMailBulk, FaUser } from "react-icons/fa";
-import { BsFillFileEarmarkSpreadsheetFill } from "react-icons/bs";
-import { GiProgression } from "react-icons/gi";
-import { GrUserWorker } from "react-icons/gr";
+import { FaEdit, FaHome, FaTasks } from "react-icons/fa";
+
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
@@ -38,34 +36,19 @@ const Dashboard = () => {
               to={"work-sheet"}
               className="uppercase text-2xl py-3 flex items-center gap-2 text-black "
             >
-              <BsFillFileEarmarkSpreadsheetFill />
-              <li>Work Sheet</li>
+              <FaEdit />
+              <li>Create Task</li>
             </NavLink>
 
             <NavLink
               to={"payment-history"}
               className="uppercase text-2xl py-3 flex items-center gap-2 text-black "
             >
-              <FaHistory />
-              <li>Payment History</li>
+              <FaTasks />
+              <li>To-Do Tasks</li>
             </NavLink>
 
             <div className="divider py-8 divide-red-50"></div>
-            <NavLink
-              to={"/"}
-              className="uppercase text-2xl py-3 flex items-center gap-2 text-black "
-            >
-              <FaHome></FaHome>
-              <li>Home</li>
-            </NavLink>
-
-            <NavLink
-              to={"contact"}
-              className="uppercase text-2xl py-3 flex items-center gap-2 text-black "
-            >
-              <FaMailBulk></FaMailBulk>
-              <li>contact</li>
-            </NavLink>
           </ul>
         </div>
       </div>
