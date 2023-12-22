@@ -40,7 +40,7 @@ const Dashboard = () => {
             </NavLink>
 
             <NavLink
-              to={"payment-history"}
+              to={"todo"}
               className="uppercase text-2xl py-3 flex items-center gap-2 text-black "
             >
               <FaTasks />

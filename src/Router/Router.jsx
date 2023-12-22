@@ -1,11 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom';
-import MainLayout from '../Layout/MainLayout';
-import Home from '../Pages/Home/Home';
-import Login from '../Pages/Login/Login';
-import Register from '../Pages/Register/Resister';
-import Dashboard from '../Layout/Dashboard';
-import Contact from '../Component/Contact/Contact';
-import CreateTask from '../Pages/Dashboard/CreateTask';
+import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "../Layout/MainLayout";
+import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Resister";
+import Dashboard from "../Layout/Dashboard";
+import Contact from "../Component/Contact/Contact";
+import CreateTask from "../Pages/Dashboard/CreateTask";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -32,11 +33,27 @@ const Router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "create-task",
-        element:<CreateTask></CreateTask>
+        element: (
+          
+            <CreateTask></CreateTask>
+          
+        ),
+      },
+      {
+        path: "todo",
+        element: (
+          
+            <todo></todo>
+          
+        ),
       },
     ],
   },
